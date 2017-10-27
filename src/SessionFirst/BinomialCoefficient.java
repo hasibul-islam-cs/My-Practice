@@ -1,4 +1,4 @@
-package test;
+package SessionFirst;
 
 import java.util.Scanner;
 
@@ -12,8 +12,12 @@ class Binomial{
 			return n*Factorial(n-1);
 	}
 }
+/*
+ * 		m!
+ *	 x!(m-x)!
+ */
 
-public class TestClass{
+public class BinomialCoefficient{
 	public static void main(String[] args){
 		Binomial bm = new Binomial();
 		Scanner sc = new Scanner(System.in);

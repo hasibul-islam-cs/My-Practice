@@ -1,9 +1,9 @@
-package test;
+package SessionFirst;
 
 import java.util.Scanner;
 import java.math.BigInteger;
 
-public class Summation {
+public class SummationOfDigit {
 	private Scanner sc;
 	BigInteger last;
 	BigInteger checker2;
@@ -35,7 +35,7 @@ public class Summation {
 	}
 	
 	public static void main(String[] args){
-		Summation tst = new Summation();
+		SummationOfDigit tst = new SummationOfDigit();
 		int t;
 		BigInteger a;
 		tst.sc = new Scanner(System.in);
