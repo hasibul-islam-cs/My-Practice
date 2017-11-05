@@ -1,4 +1,4 @@
-package SessionFirst;
+package SomeAlgorithms;
 
 import java.util.Scanner;
 import java.math.BigInteger;
