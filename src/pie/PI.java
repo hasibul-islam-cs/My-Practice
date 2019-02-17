@@ -37,43 +37,50 @@ public class PI {
 		Scanner sc = new Scanner(System.in);
 		PI pi = new PI();
 		
-		int i = 0;
+		int i = 1;
 		while(true) {
 			String data = pi.read("init");
 			String out = pi.read("output");
 			String history = pi.read("history");
 			
-			if (Integer.parseInt(data)<7 && out.contains(".")) {
+			if (Integer.parseInt(data)<113 && out.contains(".")) {
 				data += 0;
+				if (data.length() == 2) {
+					data += 0;
+				}
 			}
-			else if (Integer.parseInt(data)<7){
+			else if (Integer.parseInt(data)<113){
 				out += ".";
 				data += 0;
+				
+				if (data.length() == 2) {
+					data += 0;
+				}
 			}
 			
 			if (history != null)
-				history += data + "/ 7 = ";
+				history += data + " / 113 = ";
 			else 
-				history = data + "/ 7 = " ;
+				history = data + " / 113 = " ;
 			
 			if (out != null)
-				out += Integer.parseInt(data)/7;
+				out += Integer.parseInt(data)/113;
 			else 
-				out = Integer.toString(Integer.parseInt(data)/7);
+				out = Integer.toString(Integer.parseInt(data)/113);
 			
-			history += Integer.parseInt(data)/7 + " *";
+			history += Integer.parseInt(data)/113 + " *";
 			
-			pi.write("init", Integer.toString(Integer.parseInt(data)%7));
+			pi.write("init", Integer.toString(Integer.parseInt(data)%113));
 			pi.write("output", out);
 			pi.write("history", history);
 			
-			if (i == 50) {
+			if (i == 101) {
 				String str;
 				while(true) {
 					System.out.print("graph-ai /~ ");
 					str = sc.next();
 					if (str.equals("con")) {
-						i = 0;
+						i = 1;
 						break;
 					}
 					else if (str.equals("pi")) {
@@ -86,9 +93,10 @@ public class PI {
 						System.out.println(history);
 					}
 					else if (str.equals("clr")) {
-						pi.write("init", "22");
+						pi.write("init", "355");
 						pi.write("history", " ");
 						pi.write("output", " ");
+						System.exit(0);
 					}
 					else if (str.equals("stp")) {
 						System.exit(0);
@@ -99,7 +107,7 @@ public class PI {
 						System.out.println("pi - for generated value");
 						System.out.println("len - already counted");
 						System.out.println("stp - to stop propagation");
-						System.out.println("clr - to initialize again");
+						System.out.println("clr - initial and stop");
 						System.out.println("--------------------------");
 					}
 				}
